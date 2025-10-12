@@ -17,7 +17,7 @@ const port = process.env.PORT;
 //middleware
 app.use(express.json());
 app.use(cors({
-  origin: ["https://tomatofront.netlify.app"],
+  origin: ["https://tomatofront.netlify.app", "https://tomatofrontadmin.netlify.app"],
   methods: ["GET", "POST", "PUT", "DELETE"],
   credentials: true
 }));
