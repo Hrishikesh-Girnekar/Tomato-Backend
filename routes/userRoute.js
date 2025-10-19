@@ -1,6 +1,6 @@
 import express from 'express'
 import { loginUser, registerUser } from '../controllers/userController.js'
-import wrapAsync from '../utils/wrapAsync.js';
+import {wrapAsync} from '../utils/wrapAsync.js';
 
 const userRouter = express.Router();
 

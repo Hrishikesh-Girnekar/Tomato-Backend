@@ -1,7 +1,7 @@
 import express from 'express'
 import { addToCart, removeFromCart, getCart } from '../controllers/cartController.js'
 import authMiddleware from '../middlewares/auth.js';
-import wrapAsync from '../utils/wrapAsync.js';
+import {wrapAsync} from '../utils/wrapAsync.js';
 
 const cartRouter = express.Router();
 
