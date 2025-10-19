@@ -51,7 +51,7 @@ const placeOrder = async (req, res) => {
         cancel_url: `${frontend_url}/verify?success=false&orderId=${newOrder._id}`
     })
 
-    res.json({ success: true, message:"Order placed — thank you!", session_url: session.url })
+    res.json({ success: true, session_url: session.url })
 
 
 
@@ -62,10 +62,10 @@ const verifyOrder = async (req, res) => {
 
     if (success == 'true') {
         await orderModel.findByIdAndUpdate(orderId, { payment: true });
-        res.json({ success: true, message: "Paid" })
+        res.json({ success: true, message: "Order Placed ! Thank You !" })
     } else {
         await orderModel.findByIdAndDelete(orderId);
-        res.json({ success: false, message: "Not Paid" })
+        res.json({ success: false, message: "Payment Failed - Order did not place !" })
     }
 
 }
