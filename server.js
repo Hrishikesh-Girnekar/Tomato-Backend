@@ -32,11 +32,27 @@ app.use("/api/user", userRouter);
 app.use("/api/cart", cartRouter);
 app.use("/api/order", orderRouter);
 
-app.get("/", (req,res) => {
-    res.send("API Working");
+app.get("/", (req, res) => {
+  res.send("API Working");
 })
 
+// app.use((err, req, res, next) => {
+//     console.log(err);
+//     // let {success, message="Something went wrong"} = err;
+//     res.json({success:false, message:"Error"});
+// });
+
+app.use((err, req, res, next) => {
+    console.error(err.stack); // for debugging
+
+    // const status = err.status || 500;
+    const message = err.message || "Something went wrong";
+
+    res.json({success: false, message});
+});
+
+
 app.listen(port, () => {
-    console.log(`Server started on http://localhost:${port}`);
-    
+  console.log(`Server started on http://localhost:${port}`);
+
 })

@@ -9,7 +9,7 @@ const loginUser = async(req, res) => {
     
     const {email, password} = req.body;
 
-    try {
+   
         const user = await userModel.findOne({email});
 
         if (!user) {
@@ -25,11 +25,7 @@ const loginUser = async(req, res) => {
         const token = createToken(user._id);
         res.json({success:true, token});
 
-    } catch (error) {
-        console.log(error);
-        res.json({success:false, message:"Error"});
-        
-    }
+   
 
 }
 
@@ -42,7 +38,7 @@ const createToken = (id) => {
 // register user
 const registerUser = async(req, res) => {
     const { name, email, password } = req.body;
-    try {
+   
 
         // Checking is user already exist or not
         const exists = await userModel.findOne({email});
@@ -76,11 +72,7 @@ const registerUser = async(req, res) => {
 
         res.json({success:true, token});
 
-    } catch (error) {
-        console.log(error)
-        res.json({success:false, message:"Error"});
-        
-    }
+   
 
 }
 
