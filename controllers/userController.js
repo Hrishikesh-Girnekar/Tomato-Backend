@@ -23,7 +23,7 @@ const loginUser = async(req, res) => {
         }
 
         const token = createToken(user._id);
-        res.json({success:true, token});
+        res.json({success:true, message:`Welcome to Tomato! You've logged in successfully.`, token});
 
    
 
@@ -70,7 +70,7 @@ const registerUser = async(req, res) => {
 
         const token = createToken(user._id);
 
-        res.json({success:true, token});
+        res.json({success:true, message:"Registered successfully", token});
 
    
 
