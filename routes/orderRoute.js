@@ -1,7 +1,7 @@
 import express from 'express';
 import authMiddleware from '../middlewares/auth.js';
 import { listOrders, placeOrder, updateStatus, userOrders, verifyOrder } from '../controllers/orderController.js';
-import {wrapAsync} from '../utils/wrapAsync.js';
+import wrapAsync from '../utils/wrapAsync.js';
 
 const orderRouter = express.Router();
 
