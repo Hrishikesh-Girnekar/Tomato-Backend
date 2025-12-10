@@ -83,7 +83,7 @@ Built using **Node.js**, **Express**, and **MongoDB**, this backend handles auth
 ## 🧪 How to Run Locally
 
 ```bash
-git clone <your-backend-repo>
+git clone https://github.com/Hrishikesh-Girnekar/Tomato-Backend.git
 cd tomato-backend
 
 npm install
